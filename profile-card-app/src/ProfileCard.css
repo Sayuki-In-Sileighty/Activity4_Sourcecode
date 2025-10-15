@@ -1,0 +1,126 @@
+/* Full container */
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #111 20%, #222 100%);
+  transition: background 1s ease, background-size 1s ease;
+  background-size: cover;
+  background-position: center;
+}
+
+/* AE86 drifting background */
+.app-container.ae86-active {
+  background-image: url(ae86-ae86trueno.gif);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Profile card */
+.profile-card {
+  width: 400px;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid #000;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Black stripe on top */
+.profile-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: #000;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Name */
+.profile-card h2 {
+  color: #000;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hidden AE86 text */
+.profile-card h2::after {
+  content: " AE86 藤原豆腐店";
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  background: #fff;
+  border: 2px solid #000;
+  padding: 3px 6px;
+  margin-left: 6px;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(-10px) scale(0.8);
+  transition: all 0.5s ease;
+}
+
+/* Show AE86 name */
+.profile-card h2.show-ae86::after {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Input field */
+.profile-card input {
+  margin-top: 12px;
+  padding: 10px;
+  width: 85%;
+  border: 2px solid #000;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+  color: #111;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.profile-card input:focus {
+  border-color: #e60000;
+  box-shadow: 0 0 10px rgba(230, 0, 0, 0.6);
+}
+
+/* Paragraph */
+.profile-card p {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.profile-card:hover {
+  box-shadow: 0 0 20px #e60000, 0 0 40px #ff0000;
+  animation: blinkRed 0.4s infinite alternate; /* faster blink */
+}
+
+@keyframes blinkRed {
+  0% {
+    box-shadow: 0 0 10px #e60000, 0 0 20px #ff0000;
+  }
+  100% {
+    box-shadow: 0 0 25px #ff3333, 0 0 50px #ff0000;
+  }
+}

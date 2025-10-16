@@ -124,3 +124,51 @@
     box-shadow: 0 0 25px #ff3333, 0 0 50px #ff0000;
   }
 }
+/* Wrapper for image + card */
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Profile image */
+.profile-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #000;
+  background: #fff;
+  transition: all 0.4s ease;
+}
+
+/* Glow on hover */
+.profile-wrapper:hover .profile-image {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #ff0000, 0 0 60px #ff3333;
+}
+
+/* Buttons */
+.toggle-btn {
+  margin-top: 14px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid #000;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: #ff0000;
+  color: #fff;
+  box-shadow: 0 0 15px #ff0000, 0 0 30px #ff3333;
+}
+
+/* Upload label looks like a button */
+.upload-btn {
+  display: inline-block;
+  cursor: pointer;
+}
